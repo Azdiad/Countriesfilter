@@ -21,15 +21,7 @@ class _HomepageState extends State<Homepage> {
       var fetchedProvider =
           Provider.of<FetchedCountriesProvider>(context, listen: false);
       fetchedProvider.fetchCountriesDetails().then((_) {
-        setState(() {
-          expandedState = fetchedProvider
-              .groupedCountriesByContinent()
-              .keys
-              .fold<Map<String, bool>>({}, (Map<String, bool> map, String key) {
-            map[key] = false;
-            return map;
-          });
-        });
+ 
       });
     });
   }
